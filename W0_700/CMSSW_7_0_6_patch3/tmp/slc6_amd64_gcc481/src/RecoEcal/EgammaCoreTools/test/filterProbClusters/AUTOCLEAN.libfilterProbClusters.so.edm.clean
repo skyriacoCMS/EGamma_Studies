@@ -1,0 +1,2 @@
+01:/bin/rm -f lib/slc6_amd64_gcc481/pluginfilterProbClusters.so lib/slc6_amd64_gcc481/filterProbClusters.edmplugin
+90:edmPluginRefresh lib/slc6_amd64_gcc481

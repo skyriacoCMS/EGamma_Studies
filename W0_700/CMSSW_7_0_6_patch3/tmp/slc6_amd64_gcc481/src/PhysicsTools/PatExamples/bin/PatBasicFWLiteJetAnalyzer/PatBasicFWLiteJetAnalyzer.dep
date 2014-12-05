@@ -1,0 +1,11 @@
+tmp/slc6_amd64_gcc481/src/PhysicsTools/PatExamples/bin/PatBasicFWLiteJetAnalyzer/PatBasicFWLiteJetAnalyzer.o: \
+ src/PhysicsTools/PatExamples/bin/PatBasicFWLiteJetAnalyzer.cc \
+ src/DataFormats/PatCandidates/interface/Jet.h \
+ src/DataFormats/PatCandidates/interface/PATObject.h \
+ src/DataFormats/PatCandidates/interface/TriggerObjectStandAlone.h \
+ src/DataFormats/PatCandidates/interface/TriggerObject.h \
+ src/DataFormats/PatCandidates/interface/LookupTableRecord.h \
+ src/DataFormats/PatCandidates/interface/UserData.h \
+ src/DataFormats/PatCandidates/interface/CandKinResolution.h \
+ src/DataFormats/PatCandidates/interface/JetCorrFactors.h \
+

@@ -1,0 +1,2 @@
+ALL_PACKAGES += $(patsubst src/%,%,src/RecoEgamma/PhotonIdentification)
+subdirs_src_RecoEgamma_PhotonIdentification := src_RecoEgamma_PhotonIdentification_test src_RecoEgamma_PhotonIdentification_interface src_RecoEgamma_PhotonIdentification_python src_RecoEgamma_PhotonIdentification_src src_RecoEgamma_PhotonIdentification_plugins

@@ -1,0 +1,23 @@
+tmp/slc6_amd64_gcc481/src/RecoEgamma/PhotonIdentification/src/RecoEgammaPhotonIdentification/CutBasedPhotonIDAlgo.o: \
+ src/RecoEgamma/PhotonIdentification/src/CutBasedPhotonIDAlgo.cc \
+ src/RecoEgamma/PhotonIdentification/interface/CutBasedPhotonIDAlgo.h \
+
+tmp/slc6_amd64_gcc481/src/RecoEgamma/PhotonIdentification/src/RecoEgammaPhotonIdentification/GEDPhoIDTools.o: \
+ src/RecoEgamma/PhotonIdentification/src/GEDPhoIDTools.cc \
+ src/RecoEgamma/PhotonIdentification/interface/GEDPhoIDTools.h \
+
+tmp/slc6_amd64_gcc481/src/RecoEgamma/PhotonIdentification/src/RecoEgammaPhotonIdentification/PFPhotonIsolationCalculator.o: \
+ src/RecoEgamma/PhotonIdentification/src/PFPhotonIsolationCalculator.cc \
+ src/RecoEgamma/PhotonIdentification/interface/PFPhotonIsolationCalculator.h \
+ src/RecoEcal/EgammaCoreTools/interface/EcalClusterLazyTools.h \
+ src/RecoEcal/EgammaCoreTools/interface/EcalClusterTools.h \
+
+tmp/slc6_amd64_gcc481/src/RecoEgamma/PhotonIdentification/src/RecoEgammaPhotonIdentification/PhotonIsolationCalculator.o: \
+ src/RecoEgamma/PhotonIdentification/src/PhotonIsolationCalculator.cc \
+ src/RecoEgamma/PhotonIdentification/interface/PhotonIsolationCalculator.h \
+
+tmp/slc6_amd64_gcc481/src/RecoEgamma/PhotonIdentification/src/RecoEgammaPhotonIdentification/PhotonMIPHaloTagger.o: \
+ src/RecoEgamma/PhotonIdentification/src/PhotonMIPHaloTagger.cc \
+ src/RecoEgamma/PhotonIdentification/interface/PhotonMIPHaloTagger.h \
+ src/RecoEcal/EgammaCoreTools/interface/EcalClusterTools.h \
+

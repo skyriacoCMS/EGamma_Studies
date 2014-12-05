@@ -1,0 +1,18 @@
+
+universe = vanilla
+Executable = ./sleep_new
+Requirements =
+Should_Transfer_Files =  YES
+WhenToTransferOutput = ON_EXIT
+Transfer_Input_Files = 
+Output = ./LogFiles/$(Process).stdout
+Error = ./LogFiles/$(Process).stderr
+Log = ./LogFiles/$(Process).log
+notify_user = skyria@FNAL.GOV
+use_x509userproxy = true
+Arguments = $(Process)001  /eos/uscms/store/user/skyria/Photon_Ntuples/$(Process).root
+Queue 4000
+
+
+
+

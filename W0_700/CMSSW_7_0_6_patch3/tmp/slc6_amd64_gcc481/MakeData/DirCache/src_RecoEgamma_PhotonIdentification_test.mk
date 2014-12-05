@@ -1,0 +1,3 @@
+ALL_COMMONRULES += src_RecoEgamma_PhotonIdentification_test
+src_RecoEgamma_PhotonIdentification_test_parent := RecoEgamma/PhotonIdentification
+src_RecoEgamma_PhotonIdentification_test_INIT_FUNC += $$(eval $$(call CommonProductRules,src_RecoEgamma_PhotonIdentification_test,src/RecoEgamma/PhotonIdentification/test,TEST))

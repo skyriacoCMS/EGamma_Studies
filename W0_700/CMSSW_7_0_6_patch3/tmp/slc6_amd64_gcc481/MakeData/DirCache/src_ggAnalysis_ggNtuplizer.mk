@@ -1,0 +1,2 @@
+ALL_PACKAGES += $(patsubst src/%,%,src/ggAnalysis/ggNtuplizer)
+subdirs_src_ggAnalysis_ggNtuplizer := src_ggAnalysis_ggNtuplizer_test src_ggAnalysis_ggNtuplizer_interface src_ggAnalysis_ggNtuplizer_python src_ggAnalysis_ggNtuplizer_plugins

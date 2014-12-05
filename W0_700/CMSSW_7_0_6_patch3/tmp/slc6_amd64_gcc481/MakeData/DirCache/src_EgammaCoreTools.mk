@@ -1,0 +1,2 @@
+ALL_SUBSYSTEMS+=$(patsubst src/%,%,src/EgammaCoreTools)
+subdirs_src_EgammaCoreTools = src_EgammaCoreTools_python src_EgammaCoreTools_doc src_EgammaCoreTools_src src_EgammaCoreTools_plugins src_EgammaCoreTools_interface src_EgammaCoreTools_test

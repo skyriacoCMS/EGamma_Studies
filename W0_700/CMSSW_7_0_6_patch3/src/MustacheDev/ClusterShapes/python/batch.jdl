@@ -1,0 +1,10 @@
+universe = vanilla
+Executable = Batch.sh
+should_transfer_files = YES
+Output = 1.stdout
+Error  = 1.stderr
+Log    = 1.condor
+use_x509userproxy = true
+Arguments = 
+Requirements = 
+Queue 1

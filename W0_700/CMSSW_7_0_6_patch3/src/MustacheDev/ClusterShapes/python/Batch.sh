@@ -1,0 +1,65 @@
+
+#CONDOR_CLUSTER=$1
+#CONDOR_PROCESS=$2
+#CMSSW_DIR=$3
+#RUN_DIR=$4
+#PARAMETER_SET=$5
+#NUM_EVENTS_PER_JOB=$1
+
+#
+# header 
+#
+
+#echo ""
+#echo "CMSSW on Condor"
+#echo ""
+
+#START_TIME=`/bin/date`
+#echo "started at $START_TIME"
+
+#echo ""
+#echo "parameter set:"
+#echo "CONDOR_CLUSTER: $CONDOR_CLUSTER"
+#echo "CONDOR_PROCESS: $CONDOR_PROCESS"
+#echo "CMSSW_DIR: $CMSSW_DIR"
+#echo "RUN_DIR: $RUN_DIR"
+#echo "PARAMETER_SET: $PARAMETER_SET"
+#echo "NUM_EVENTS_PER_JOB: $NUM_EVENTS_PER_JOB"
+
+#
+# setup software environment at FNAL for the given CMSSW release
+#
+
+source /uscmst1/prod/sw/cms/shrc uaf
+export SCRAM_ARCH=slc6_amd64_gcc472
+
+cd  /uscms_data/d3/skyria/SieieRetuning/CMSSW_7_0_6_patch3/src/
+
+eval `scramv1 runtime -sh`
+
+#
+# change to output directory
+#
+cd /uscms_data/d3/skyria/SieieRetuning/CMSSW_7_0_6_patch3/src/MustacheDev/ClusterShapes/python/
+
+#
+# modify parameter-set
+#
+
+#FINAL_PARAMETER_SET_NAME=`echo batch_${CONDOR_CLUSTER}_${CONDOR_PROCESS}`
+#FINAL_PARAMETER_SET=`echo $FINAL_PARAMETER_SET_NAME.cfg`
+#FINAL_LOG=`echo $FINAL_PARAMETER_SET_NAME.log`
+#FINAL_FILENAME=`echo $FINAL_PARAMETER_SET_NAME.root`
+#echo ""
+#echo "Writing final parameter-set: $FINAL_PARAMETER_SET to RUN_DIR: $RUN_DIR"
+#echo ""
+
+#let "skip = $CONDOR_PROCESS * NUM_EVENTS_PER_JOB"
+#cat $PARAMETER_SET | sed -e s/CONDOR_MAXEVENTS/$NUM_EVENTS_PER_JOB/ | sed -e s/CONDOR_SKIPEVENTS/$skip/ | sed -e s/CONDOR_OUTPUTFILENAME/$FINAL_FILENAME/ > $FINAL_PARAMETER_SET
+
+#
+# run cmssw
+#
+cmsRun  ConfFile_cfg.py
+
+

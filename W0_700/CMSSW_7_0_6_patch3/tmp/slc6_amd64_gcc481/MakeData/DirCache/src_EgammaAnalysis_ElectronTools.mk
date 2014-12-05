@@ -1,0 +1,2 @@
+ALL_PACKAGES += $(patsubst src/%,%,src/EgammaAnalysis/ElectronTools)
+subdirs_src_EgammaAnalysis_ElectronTools := src_EgammaAnalysis_ElectronTools_test src_EgammaAnalysis_ElectronTools_python src_EgammaAnalysis_ElectronTools_src src_EgammaAnalysis_ElectronTools_plugins

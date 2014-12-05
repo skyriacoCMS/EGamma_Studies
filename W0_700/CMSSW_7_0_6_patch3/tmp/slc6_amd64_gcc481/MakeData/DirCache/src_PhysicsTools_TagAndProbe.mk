@@ -1,0 +1,2 @@
+ALL_PACKAGES += $(patsubst src/%,%,src/PhysicsTools/TagAndProbe)
+subdirs_src_PhysicsTools_TagAndProbe := src_PhysicsTools_TagAndProbe_test src_PhysicsTools_TagAndProbe_interface src_PhysicsTools_TagAndProbe_python src_PhysicsTools_TagAndProbe_src src_PhysicsTools_TagAndProbe_plugins

@@ -1,0 +1,24 @@
+tmp/slc6_amd64_gcc481/src/MustacheDev/ClusterShapes/plugins/MustacheDevClusterShapesAuto/ClusterShapes.o: \
+ src/MustacheDev/ClusterShapes/plugins/ClusterShapes.cc \
+ src/ggAnalysis/ggNtuplizer/interface/GenParticleParentage.h \
+ src/ggAnalysis/ggNtuplizer/plugins/GenParticleParentage.cc \
+ src/RecoEcal/EgammaCoreTools/interface/Mustache.h \
+ src/RecoEcal/EgammaCoreTools/interface/EcalClusterLazyTools.h \
+ src/RecoEcal/EgammaCoreTools/interface/EcalClusterTools.h \
+ src/DataFormats/PatCandidates/interface/Electron.h \
+ src/DataFormats/PatCandidates/interface/Lepton.h \
+ src/DataFormats/PatCandidates/interface/PATObject.h \
+ src/DataFormats/PatCandidates/interface/TriggerObjectStandAlone.h \
+ src/DataFormats/PatCandidates/interface/TriggerObject.h \
+ src/DataFormats/PatCandidates/interface/LookupTableRecord.h \
+ src/DataFormats/PatCandidates/interface/UserData.h \
+ src/DataFormats/PatCandidates/interface/CandKinResolution.h \
+ src/DataFormats/PatCandidates/interface/Isolation.h \
+ src/DataFormats/PatCandidates/interface/PackedCandidate.h \
+ src/DataFormats/PatCandidates/interface/MET.h \
+ src/DataFormats/PatCandidates/interface/Photon.h \
+ src/DataFormats/PatCandidates/interface/Particle.h \
+ src/HiggsAnalysis/HiggsTo2photons/interface/CiCPhotonID.h \
+ src/RecoEgamma/PhotonIdentification/interface/GEDPhoIDTools.h \
+ src/RecoEgamma/PhotonIdentification/src/GEDPhoIDTools.cc \
+

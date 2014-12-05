@@ -1,0 +1,2 @@
+ALL_PACKAGES += $(patsubst src/%,%,src/RecoEcal/EgammaCoreTools)
+subdirs_src_RecoEcal_EgammaCoreTools := src_RecoEcal_EgammaCoreTools_python src_RecoEcal_EgammaCoreTools_doc src_RecoEcal_EgammaCoreTools_src src_RecoEcal_EgammaCoreTools_plugins src_RecoEcal_EgammaCoreTools_test

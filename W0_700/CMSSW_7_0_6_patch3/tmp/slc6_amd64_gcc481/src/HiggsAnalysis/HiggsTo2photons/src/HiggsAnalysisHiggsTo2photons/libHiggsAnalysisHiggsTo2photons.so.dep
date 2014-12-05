@@ -1,0 +1,4 @@
+tmp/slc6_amd64_gcc481/src/HiggsAnalysis/HiggsTo2photons/src/HiggsAnalysisHiggsTo2photons/CiCPhotonID.o: \
+ src/HiggsAnalysis/HiggsTo2photons/src/CiCPhotonID.cc \
+ src/HiggsAnalysis/HiggsTo2photons/interface/CiCPhotonID.h \
+

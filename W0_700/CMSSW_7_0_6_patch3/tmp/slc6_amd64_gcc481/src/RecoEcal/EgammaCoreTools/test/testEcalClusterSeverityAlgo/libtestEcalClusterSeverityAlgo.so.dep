@@ -1,0 +1,5 @@
+tmp/slc6_amd64_gcc481/src/RecoEcal/EgammaCoreTools/test/testEcalClusterSeverityAlgo/testEcalClusterSeverityAlgo.o: \
+ src/RecoEcal/EgammaCoreTools/test/testEcalClusterSeverityAlgo.cc \
+ src/RecoEcal/EgammaCoreTools/interface/EcalClusterSeverityLevelAlgo.h \
+ src/RecoEcal/EgammaCoreTools/interface/EcalClusterTools.h \
+

@@ -1,0 +1,971 @@
+#include <TGraph.h>
+
+void EfEst_ROC(){
+
+  TFile *f1 = new TFile("ROC_histos_BAR_lowPu.root");
+  
+  
+  
+  cout<<"ROC CURVE USING FILE :" <<f1->GetName()<<endl; 
+
+  f1->cd();
+
+  double ef1[1000],ef2[1000],ef3[1000],ef4[1000],ef5[1000],ef6[1000],ef7[1000],ef8[1000],ef9[1000],ef10[1000],ef11[1000],ef12[1000],ef13[1000],ef14[1000],ef15[1000],ef16[1000],ef17[1000],ef18[1000],ef19[1000]; 
+ 
+  double bck1[1000],bck2[1000],bck3[1000],bck4[1000],bck5[1000],bck6[1000],bck7[1000],bck8[1000],bck9[1000],bck10[1000],bck11[1000],bck12[1000],bck13[1000],bck14[1000],bck15[1000],bck16[1000],bck17[1000],bck18[1000],bck19[1000];
+
+  double lef1[1000],lef2[1000],lef3[1000],lef4[1000],lef5[1000],lef6[1000],lef7[1000],lef8[1000],lef9[1000],lef10[1000],lef11[1000],lef12[1000],lef13[1000],lef14[1000],lef15[1000],lef16[1000],lef17[1000],lef18[1000],lef19[1000]; 
+
+
+ 
+  double lbck1m= 0 ; double  lbck2m= 0 ; double  lbck3m= 0 ; double  lbck4m= 0 ; double  lbck5m= 0 ; double  lbck6m= 0 ; double  lbck7m= 0 ; double  lbck8m= 0 ; double  lbck9m= 0 ; double  lbck10m= 0 ; double  lbck11m= 0 ; double  lbck12m= 0 ; double  lbck13m= 0 ; double  lbck14m= 0 ; double  lbck15m= 0 ; double  lbck16m= 0 ; double  lbck17m= 0 ; double  lbck18m= 0 ; double  lbck19m =0;
+  
+double lbck1o= 0 ; double  lbck2o= 0 ; double  lbck3o= 0 ; double  lbck4o= 0 ; double  lbck5o= 0 ; double  lbck6o= 0 ; double  lbck7o= 0 ; double  lbck8o= 0 ; double  lbck9o= 0 ; double  lbck10o= 0 ; double  lbck11o= 0 ; double  lbck12o= 0 ; double  lbck13o= 0 ; double  lbck14o= 0 ; double  lbck15o= 0 ; double  lbck16o= 0 ; double  lbck17o= 0 ; double  lbck18o= 0 ; double  lbck19o =0;
+  
+double lbck1ao= 0 ; double  lbck2ao= 0 ; double  lbck3ao= 0 ; double  lbck4ao= 0 ; double  lbck5ao= 0 ; double  lbck6ao= 0 ; double  lbck7ao= 0 ; double  lbck8ao= 0 ; double  lbck9ao= 0 ; double  lbck10ao= 0 ; double  lbck11ao= 0 ; double  lbck12ao= 0 ; double  lbck13ao= 0 ; double  lbck14ao= 0 ; double  lbck15ao= 0 ; double  lbck16ao= 0 ; double  lbck17ao= 0 ; double  lbck18ao= 0 ; double  lbck19ao =0;
+  
+
+
+
+ 
+  double lbckms[19] =0 ; 
+  
+double lbckos[19] =0 ; 
+  
+double lbckaos[19] =0 ;
+  
+
+
+
+
+
+  
+
+
+
+  for(int i  = 0; i < 1000;  i ++){
+    double xax = 0.1*i/1000; 
+     int bin = w48->FindBin(xax);
+  
+    ef1[i] = w37->Integral(0,bin)*1.0/w37->GetEntries();
+    ef2[i] = w38->Integral(0,bin)*1.0/w38->GetEntries();
+    ef3[i] = w39->Integral(0,bin)*1.0/w39->GetEntries();
+    ef4[i] = w40->Integral(0,bin)*1.0/w40->GetEntries();
+    ef5[i] = w41->Integral(0,bin)*1.0/w41->GetEntries();
+    ef6[i] = w42->Integral(0,bin)*1.0/w42->GetEntries();
+    ef7[i] = w43->Integral(0,bin)*1.0/w43->GetEntries();
+    ef8[i] = w44->Integral(0,bin)*1.0/w44->GetEntries();
+    ef9[i] = w45->Integral(0,bin)*1.0/w45->GetEntries();
+    ef10[i] = w46->Integral(0,bin)*1.0/w46->Integral(0,999);
+    ef11[i] = w47->Integral(0,bin)*1.0/w47->Integral(0,999);
+    ef12[i] = w48->Integral(0,bin)*1.0/w48->Integral(0,999);
+    ef13[i] = w49->Integral(0,bin)*1.0/w49->Integral(0,999);
+    ef14[i] = w50->Integral(0,bin)*1.0/w50->Integral(0,999);
+    ef15[i] = w51->Integral(0,bin)*1.0/w51->Integral(0,999);
+    ef16[i] = w52->Integral(0,bin)*1.0/w52->Integral(0,999);
+    ef17[i] = w53->Integral(0,bin)*1.0/w53->Integral(0,999);
+    ef18[i] = w54->Integral(0,bin)*1.0/w54->Integral(0,999);
+    ef19[i] = w55->Integral(0,bin)*1.0/w55->Integral(0,999);
+
+
+
+    bck1[i] = w37b->Integral(0,bin)*1.0/w37b->Integral(0,999);
+    bck2[i] = w38b->Integral(0,bin)*1.0/w38b->Integral(0,999);
+    bck3[i] = w39b->Integral(0,bin)*1.0/w39b->Integral(0,999);
+    bck4[i] = w40b->Integral(0,bin)*1.0/w40b->Integral(0,999);
+    bck5[i] = w41b->Integral(0,bin)*1.0/w41b->Integral(0,999);
+    bck6[i] = w42b->Integral(0,bin)*1.0/w42b->Integral(0,999);
+    bck7[i] = w43b->Integral(0,bin)*1.0/w43b->Integral(0,999);
+    bck8[i] = w44b->Integral(0,bin)*1.0/w44b->Integral(0,999);
+    bck9[i] = w45b->Integral(0,bin)*1.0/w45b->Integral(0,999);
+    bck10[i] = w46b->Integral(0,bin)*1.0/w46b->Integral(0,999);
+    bck11[i] = w47b->Integral(0,bin)*1.0/w47b->Integral(0,999);
+    bck12[i] = w48b->Integral(0,bin)*1.0/w48b->Integral(0,999);
+    bck13[i] = w49b->Integral(0,bin)*1.0/w49b->Integral(0,999);
+    bck14[i] = w50b->Integral(0,bin)*1.0/w50b->Integral(0,999);
+    bck15[i] = w51b->Integral(0,bin)*1.0/w51b->Integral(0,999);
+    bck16[i] = w52b->Integral(0,bin)*1.0/w52b->Integral(0,999);
+    bck17[i] = w53b->Integral(0,bin)*1.0/w53b->Integral(0,999);
+    bck18[i] = w54b->Integral(0,bin)*1.0/w54b->Integral(0,999);
+    bck19[i] = w55b->Integral(0,bin)*1.0/w55b->Integral(0,999);
+
+
+
+    lef1[i] = lw37->Integral(0,bin)*1.0/lw37->Integral(0,999);
+    lef2[i] = lw38->Integral(0,bin)*1.0/lw38->Integral(0,999);
+    lef3[i] = lw39->Integral(0,bin)*1.0/lw39->Integral(0,999);
+    lef4[i] = lw40->Integral(0,bin)*1.0/lw40->Integral(0,999);
+    lef5[i] = lw41->Integral(0,bin)*1.0/lw41->Integral(0,999);
+    lef6[i] = lw42->Integral(0,bin)*1.0/lw42->Integral(0,999);
+    lef7[i] = lw43->Integral(0,bin)*1.0/lw43->Integral(0,999);
+    lef8[i] = lw44->Integral(0,bin)*1.0/lw44->Integral(0,999);
+    lef9[i] = lw45->Integral(0,bin)*1.0/lw45->Integral(0,999);
+    lef10[i] = lw46->Integral(0,bin)*1.0/lw46->Integral(0,999);
+    lef11[i] = lw47->Integral(0,bin)*1.0/lw47->Integral(0,999);
+    lef12[i] = lw48->Integral(0,bin)*1.0/lw48->Integral(0,999);
+    lef13[i] = lw49->Integral(0,bin)*1.0/lw49->Integral(0,999);
+    lef14[i] = lw50->Integral(0,bin)*1.0/lw50->Integral(0,999);
+    lef15[i] = lw51->Integral(0,bin)*1.0/lw51->Integral(0,999);
+    lef16[i] = lw52->Integral(0,bin)*1.0/lw52->Integral(0,999);
+    lef17[i] = lw53->Integral(0,bin)*1.0/lw53->Integral(0,999);
+    lef18[i] = lw54->Integral(0,bin)*1.0/lw54->Integral(0,999);
+    lef19[i] = lw55->Integral(0,bin)*1.0/lw55->Integral(0,999);
+
+
+    lbck1[i] = lw37b->Integral(0,bin)*1.0/lw37b->Integral(0,999);
+    lbck2[i] = lw38b->Integral(0,bin)*1.0/lw38b->Integral(0,999);
+    lbck3[i] = lw39b->Integral(0,bin)*1.0/lw39b->Integral(0,999);
+    lbck4[i] = lw40b->Integral(0,bin)*1.0/lw40b->Integral(0,999);
+    lbck5[i] = lw41b->Integral(0,bin)*1.0/lw41b->Integral(0,999);
+    lbck6[i] = lw42b->Integral(0,bin)*1.0/lw42b->Integral(0,999);
+    lbck7[i] = lw43b->Integral(0,bin)*1.0/lw43b->Integral(0,999);
+    lbck8[i] = lw44b->Integral(0,bin)*1.0/lw44b->Integral(0,999);
+    lbck9[i] = lw45b->Integral(0,bin)*1.0/lw45b->Integral(0,999);
+    lbck10[i] = lw46b->Integral(0,bin)*1.0/lw46b->Integral(0,999);
+    lbck11[i] = lw47b->Integral(0,bin)*1.0/lw47b->Integral(0,999); 
+    lbck12[i] = lw48b->Integral(0,bin)*1.0/lw48b->Integral(0,999);
+    lbck13[i] = lw49b->Integral(0,bin)*1.0/lw49b->Integral(0,999);
+    lbck14[i] = lw50b->Integral(0,bin)*1.0/lw50b->Integral(0,999);
+    lbck15[i] = lw51b->Integral(0,bin)*1.0/lw51b->Integral(0,999);
+    lbck16[i] = lw52b->Integral(0,bin)*1.0/lw52b->Integral(0,999);
+    lbck17[i] = lw53b->Integral(0,bin)*1.0/lw53b->Integral(0,999);
+    lbck18[i] = lw54b->Integral(0,bin)*1.0/lw54b->Integral(0,999);
+    lbck19[i] = lw55b->Integral(0,bin)*1.0/lw55b->Integral(0,999);
+
+
+
+
+  }
+
+
+  // finding the esig/srt(bck)
+
+
+  double w0[19] = {0}; 
+  
+  for(int k = 0; k < 19; k++) w0[k] = 3.7 + k*0.1; 
+  
+
+  double esigSQbck[19] = {-99};
+  double lesigSQbck[19] = {-99};
+
+  double CutV[19]; 
+  double lCutV[19]; 
+  
+  
+
+  for(int i  = 0  ; i < 1000 ; i++){
+    double xax = 0.1*i/1000; 
+
+    if( bck1[i] >0.0001  && ef1[i]/sqrt( bck1[i]) >  esigSQbck[0] ){esigSQbck[0] =  ef1[i]/sqrt(bck1[i]); CutV[0] = xax; }
+    if( bck2[i] >0.0001  && ef2[i]/sqrt( bck2[i]) >  esigSQbck[1] ){ esigSQbck[1] =  ef2[i]/sqrt( bck2[i]); CutV[1] = xax; }
+    if( bck3[i] >0.0001  && ef3[i]/sqrt( bck3[i]) >  esigSQbck[2] ){ esigSQbck[2] =  ef3[i]/sqrt( bck3[i]); CutV[2] = xax; }
+    if( bck4[i] >0.0001  && ef4[i]/sqrt( bck4[i]) >  esigSQbck[3] ){ esigSQbck[3] =  ef4[i]/sqrt(bck4[i]); CutV[3] = xax; }
+    if( bck5[i] >0.0001  && ef5[i]/sqrt( bck5[i]) >  esigSQbck[4] ){ esigSQbck[4] =  ef5[i]/sqrt( bck5[i]); CutV[4] = xax; }
+    if( bck6[i] >0.0001  && ef6[i]/sqrt( bck6[i]) >  esigSQbck[5] ){ esigSQbck[5] =  ef6[i]/sqrt( bck6[i]);CutV[5] = xax; }
+    if( bck7[i] >0.0001  && ef7[i]/sqrt( bck7[i]) >  esigSQbck[6] ){ esigSQbck[6] =  ef7[i]/sqrt( bck7[i]);CutV[6] = xax; }
+    if( bck8[i] >0.0001  && ef8[i]/sqrt( bck8[i]) >  esigSQbck[7] ){ esigSQbck[7] =  ef8[i]/sqrt( bck8[i]); CutV[7] = xax;}
+    if( bck9[i] >0.0001  && ef9[i]/sqrt( bck9[i]) >  esigSQbck[8] ) {esigSQbck[8] =  ef9[i]/sqrt( bck9[i]);CutV[8] = xax; }
+    if( bck10[i] >0.0001  && ef10[i]/sqrt( bck10[i]) >  esigSQbck[9] ){ esigSQbck[9] =  ef10[i]/sqrt( bck10[i]); CutV[9] = xax;}
+    if( bck11[i] >0.0001  && ef11[i]/sqrt( bck11[i]) >  esigSQbck[10] ){ esigSQbck[10] =  ef11[i]/sqrt( bck11[i]); CutV[10] = xax; }
+    if( bck12[i] >0.0001  && ef12[i]/sqrt( bck12[i]) >  esigSQbck[11] ){ esigSQbck[11] =  ef12[i]/sqrt( bck12[i]);CutV[11] = xax; }
+    if( bck13[i] >0.0001  && ef13[i]/sqrt( bck13[i]) >  esigSQbck[12] ){ esigSQbck[12] =  ef13[i]/sqrt( bck13[i]);CutV[12] = xax; }
+    if( bck14[i] >0.0001  && ef14[i]/sqrt( bck14[i]) >  esigSQbck[13] ){ esigSQbck[13] =  ef14[i]/sqrt( bck14[i]);CutV[13] = xax; }
+    if( bck15[i] >0.0001  && ef15[i]/sqrt( bck15[i]) >  esigSQbck[14] ){ esigSQbck[14] =  ef15[i]/sqrt( bck15[i]);CutV[14] = xax; }
+    if( bck16[i] >0.0001  && ef16[i]/sqrt( bck16[i]) >  esigSQbck[15] ){ esigSQbck[15] =  ef16[i]/sqrt( bck16[i]);CutV[15] = xax; }
+    if( bck17[i] >0.0001  && ef17[i]/sqrt( bck17[i]) >  esigSQbck[16] ){ esigSQbck[16] =  ef17[i]/sqrt( bck17[i]);CutV[16] = xax; }
+    if( bck18[i] >0.0001  && ef18[i]/sqrt( bck18[i]) >  esigSQbck[17] ){ esigSQbck[17] =  ef18[i]/sqrt( bck18[i]);CutV[17] = xax; }
+    if( bck19[i] >0.0001  && ef19[i]/sqrt( bck19[i]) >  esigSQbck[18] ){ esigSQbck[18] =  ef19[i]/sqrt( bck19[i]);CutV[18] = xax; }
+  
+    
+    if( lbck1[i] >0.0001  && lef1[i]/sqrt( lbck1[i]) >  lesigSQbck[0] ){ lesigSQbck[0] =  lef1[i]/sqrt(lbck1[i]); lCutV[0] = xax; }
+    if( lbck2[i] >0.0001  && lef2[i]/sqrt( lbck2[i]) >  lesigSQbck[1] ){ lesigSQbck[1] =  lef2[i]/sqrt( lbck2[i]); lCutV[1] = xax; }
+    if( lbck3[i] >0.0001  && lef3[i]/sqrt( lbck3[i]) >  lesigSQbck[2] ){ lesigSQbck[2] =  lef3[i]/sqrt( lbck3[i]); lCutV[2] = xax; }
+    if( lbck4[i] >0.0001  && lef4[i]/sqrt( lbck4[i]) >  lesigSQbck[3] ){ lesigSQbck[3] =  lef4[i]/sqrt(lbck4[i]); lCutV[3] = xax; }
+    if( lbck5[i] >0.0001  && lef5[i]/sqrt( lbck5[i]) >  lesigSQbck[4] ){ lesigSQbck[4] =  lef5[i]/sqrt( lbck5[i]); lCutV[4] = xax; }
+    if( lbck6[i] >0.0001  && lef6[i]/sqrt( lbck6[i]) >  lesigSQbck[5] ){ lesigSQbck[5] =  lef6[i]/sqrt( lbck6[i]);lCutV[5] = xax; }
+    if( lbck7[i] >0.0001  && lef7[i]/sqrt( lbck7[i]) >  lesigSQbck[6] ){ lesigSQbck[6] =  lef7[i]/sqrt( lbck7[i]);lCutV[6] = xax; }
+    if( lbck8[i] >0.0001  && lef8[i]/sqrt( lbck8[i]) >  lesigSQbck[7] ){ lesigSQbck[7] =  lef8[i]/sqrt( lbck8[i]); lCutV[7] = xax;}
+    if( lbck9[i] >0.0001  && lef9[i]/sqrt( lbck9[i]) >  lesigSQbck[8] ) { lesigSQbck[8] =  lef9[i]/sqrt( lbck9[i]);lCutV[8] = xax; }
+    if( lbck10[i] >0.0001  && lef10[i]/sqrt( lbck10[i]) >  lesigSQbck[9] ){ lesigSQbck[9] =  lef10[i]/sqrt( lbck10[i]);lCutV[9] = xax;}
+    if( lbck11[i] >0.0001  && lef11[i]/sqrt( lbck11[i]) >  lesigSQbck[10] ){ lesigSQbck[10] =  lef11[i]/sqrt( lbck11[i]); lCutV[10] = xax; }
+    if( lbck12[i] >0.0001  && lef12[i]/sqrt( lbck12[i]) >  lesigSQbck[11] ){ lesigSQbck[11] =  lef12[i]/sqrt( lbck12[i]);lCutV[11] = xax; }
+    if( lbck13[i] >0.0001  && lef13[i]/sqrt( lbck13[i]) >  lesigSQbck[12] ){ lesigSQbck[12] =  lef13[i]/sqrt( lbck13[i]);lCutV[12] = xax; }
+    if( lbck14[i] >0.0001  && lef14[i]/sqrt( lbck14[i]) >  lesigSQbck[13] ){ lesigSQbck[13] =  lef14[i]/sqrt( lbck14[i]);lCutV[13] = xax; }
+    if( lbck15[i] >0.0001  && lef15[i]/sqrt( lbck15[i]) >  lesigSQbck[14] ){ lesigSQbck[14] =  lef15[i]/sqrt( lbck15[i]);lCutV[14] = xax; }
+    if( lbck16[i] >0.0001  && lef16[i]/sqrt( lbck16[i]) >  lesigSQbck[15] ){ lesigSQbck[15] =  lef16[i]/sqrt( lbck16[i]);lCutV[15] = xax; }
+    if( lbck17[i] >0.0001  && lef17[i]/sqrt( lbck17[i]) >  lesigSQbck[16] ){ lesigSQbck[16] =  lef17[i]/sqrt( lbck17[i]);lCutV[16] = xax; }
+    if( lbck18[i] >0.0001  && lef18[i]/sqrt( lbck18[i]) >  lesigSQbck[17] ){ lesigSQbck[17] =  lef18[i]/sqrt( lbck18[i]);lCutV[17] = xax; }
+    if( lbck19[i] >0.0001  && lef19[i]/sqrt( lbck19[i]) >  lesigSQbck[18] ){ lesigSQbck[18] =  lef19[i]/sqrt( lbck19[i]);lCutV[18] = xax; }
+  
+  
+  }
+
+  for(int i  = 0; i < 1000 ; i++){
+
+    if( ef1[i]/sqrt(bk1[i]) > lbk1m){ lbk1m =  ef1[i]/sqrt(bk1[i]);  lbkms = ef1[i] ;  lbk1ao = lef1[i];                            };
+    if( ef2[i]/sqrt(bk2[i]) > lbk2m){ lbk2m =  ef2[i]/sqrt(bk2[i]);  lbkms = ef2[i] ;  lbk2ao = lef2[i];                              };
+    if( ef3[i]/sqrt(bk3[i]) > lbk3m){ lbk3m =  ef3[i]/sqrt(bk3[i]);  lbkms = ef3[i] ;  lbk3ao = lef3[i];                              };
+    if( ef4[i]/sqrt(bk4[i]) > lbk4m){ lbk4m =  ef4[i]/sqrt(bk4[i]);  lbkms = ef4[i] ;  lbk4ao = lef4[i];                              };
+    if( ef5[i]/sqrt(bk5[i]) > lbk5m){ lbk5m =  ef5[i]/sqrt(bk5[i]);  lbkms = ef5[i] ;  lbk5ao = lef5[i];                              };
+    if( ef6[i]/sqrt(bk6[i]) > lbk6m){ lbk6m =  ef6[i]/sqrt(bk6[i]);  lbkms = ef6[i] ;  lbk6ao = lef6[i];                              };
+    if( ef7[i]/sqrt(bk7[i]) > lbk7m){ lbk7m =  ef7[i]/sqrt(bk7[i]);  lbkms = ef7[i] ;  lbk7ao = lef7[i];                              };
+    if( ef8[i]/sqrt(bk8[i]) > lbk8m){ lbk8m =  ef8[i]/sqrt(bk8[i]);  lbkms = ef8[i] ;  lbk8ao = lef8[i];                              };
+    if( ef9[i]/sqrt(bk9[i]) > lbk9m){ lbk9m =  ef9[i]/sqrt(bk9[i]);  lbkms = ef9[i] ;  lbk9ao = lef9[i];                              };
+    if( ef10[i]/sqrt(bk10[i]) > lbk10m){ lbk10m =  ef10[i]/sqrt(bk10[i]);  lbk10ms = ef1[i]  ;  lbk10ao = lef10[i];                             };
+    if( ef11[i]/sqrt(bk11[i]) > lbk11m){ lbk11m =  ef11[i]/sqrt(bk11[i]);  lbk11ms = ef1[i];  lbk11ao = lef11[i];                               };
+    if( ef12[i]/sqrt(bk12[i]) > lbk12m){ lbk12m =  ef12[i]/sqrt(bk12[i]);  lbk12ms = ef1[i];  lbk12ao = lef12[i];                               };
+    if( ef13[i]/sqrt(bk13[i]) > lbk13m){ lbk13m =  ef13[i]/sqrt(bk13[i]);  lbk13ms = ef1[i];  lbk13ao = lef13[i];                               };
+    if( ef14[i]/sqrt(bk14[i]) > lbk14m){ lbk14m =  ef14[i]/sqrt(bk14[i]);  lbk14ms = ef1[i];  lbk14ao = lef14[i];                               };
+    if( ef15[i]/sqrt(bk15[i]) > lbk15m){ lbk15m =  ef15[i]/sqrt(bk15[i]);  lbk15ms = ef1[i];  lbk15ao = lef15[i];                               };
+    if( ef16[i]/sqrt(bk16[i]) > lbk16m){ lbk16m =  ef16[i]/sqrt(bk16[i]);  lbk16ms = ef1[i];  lbk16ao = lef16[i];                               };
+    if( ef17[i]/sqrt(bk17[i]) > lbk17m){ lbk17m =  ef17[i]/sqrt(bk17[i]);  lbk17ms = ef1[i];  lbk17ao = lef17[i];                               };
+    if( ef18[i]/sqrt(bk18[i]) > lbk18m){ lbk18m =  ef18[i]/sqrt(bk18[i]);  lbk18ms = ef1[i];  lbk18ao = lef18[i];                               };
+    if( ef19[i]/sqrt(bk19[i]) > lbk19m){ lbk19m =  ef19[i]/sqrt(bk19[i]);  lbk19ms = ef1[i];  lbk19ao = lef19[i];                               };
+    
+
+    
+    if( lef1[i]/sqrt(lbk1[i]) > lbk1o){ lbk1o =  lef1[i]/sqrt(lbk1[i]);  lbk1os = ef1[i]                              };
+    if( lef2[i]/sqrt(lbk2[i]) > lbk2o){ lbk2o =  lef2[i]/sqrt(lbk2[i]);  lbk2os = ef2[i]                              };
+    if( lef3[i]/sqrt(lbk3[i]) > lbk3o){ lbk3o =  lef3[i]/sqrt(lbk3[i]);  lbk3os = ef3[i]                              };
+    if( lef4[i]/sqrt(lbk4[i]) > lbk4o){ lbk4o =  lef4[i]/sqrt(lbk4[i]);  lbk4os = ef4[i]                              };
+    if( lef5[i]/sqrt(lbk5[i]) > lbk5o){ lbk5o =  lef5[i]/sqrt(lbk5[i]);  lbk5os = ef5[i]                              };
+    if( lef6[i]/sqrt(lbk6[i]) > lbk6o){ lbk6o =  lef6[i]/sqrt(lbk6[i]);  lbk6os = ef6[i]                              };
+    if( lef7[i]/sqrt(lbk7[i]) > lbk7o){ lbk7o =  lef7[i]/sqrt(lbk7[i]);  lbk7os = ef7[i]                              };
+    if( lef8[i]/sqrt(lbk8[i]) > lbk8o){ lbk8o =  lef8[i]/sqrt(lbk8[i]);  lbk8os = ef8[i]                              };
+    if( lef9[i]/sqrt(lbk9[i]) > lbk9o){ lbk9o =  lef9[i]/sqrt(lbk9[i]);  lbk9os = ef9[i]                              };
+    if( lef10[i]/sqrt(lbk10[i]) > lbk10o){ lbk10o =  lef10[i]/sqrt(lbk10[i]);  lbk10os = ef1[i]                              };
+    if( lef11[i]/sqrt(lbk11[i]) > lbk11o){ lbk11o =  lef11[i]/sqrt(lbk11[i]);  lbk11os = ef1[i]                              };
+    if( lef12[i]/sqrt(lbk12[i]) > lbk12o){ lbk12o =  lef12[i]/sqrt(lbk12[i]);  lbk12os = ef1[i]                              };
+    if( lef13[i]/sqrt(lbk13[i]) > lbk13o){ lbk13o =  lef13[i]/sqrt(lbk13[i]);  lbk13os = ef1[i]                              };
+    if( lef14[i]/sqrt(lbk14[i]) > lbk14o){ lbk14o =  lef14[i]/sqrt(lbk14[i]);  lbk14os = ef1[i]                              };
+    if( lef15[i]/sqrt(lbk15[i]) > lbk15o){ lbk15o =  lef15[i]/sqrt(lbk15[i]);  lbk15os = ef1[i]                              };
+    if( lef16[i]/sqrt(lbk16[i]) > lbk16o){ lbk16o =  lef16[i]/sqrt(lbk16[i]);  lbk16os = ef1[i]                              };
+    if( lef17[i]/sqrt(lbk17[i]) > lbk17o){ lbk17o =  lef17[i]/sqrt(lbk17[i]);  lbk17os = ef1[i]                              };
+    if( lef18[i]/sqrt(lbk18[i]) > lbk18o){ lbk18o =  lef18[i]/sqrt(lbk18[i]);  lbk18os = ef1[i]                              };
+    if( lef19[i]/sqrt(lbk19[i]) > lbk19o){ lbk19o =  lef19[i]/sqrt(lbk19[i]);  lbk19os = ef1[i]                              };
+    
+
+
+
+
+
+
+ 
+
+  }
+
+    TGraph *Discr_Lno = new TGraph(19,w0,lesigSQbck);
+  
+
+
+    
+    TGraph *Discr_Low = new TGraph(19,w0,lesigSQbck);
+    
+
+
+    TGraph *Discr_Latnom = new TGraph(19,w0,lesigSQbck);
+  
+
+
+
+
+
+
+  TGraph *Discr_L = new TGraph(19,w0,lesigSQbck);
+  
+
+  Discr_L->SetMarkerStyle(33);
+  Discr_L->GetXaxis()->SetTitle("w0 value");
+  Discr_L->GetYaxis()->SetTitle("SigEf/#sqrt{BackEf}");
+
+  TGraph *Discr_H = new TGraph(19,w0,esigSQbck);
+  Discr_H->SetMarkerStyle(27);
+  Discr_H->SetMarkerColor(kRed);
+  Discr_H->GetXaxis()->SetTitle("w0 value");
+  Discr_H->GetYaxis()->SetTitle("SigEf/#sqrt{BackEf}");
+
+
+
+
+  TGraph *CutVal_L = new TGraph(19,w0,lCutV);
+  CutVal_L->SetMarkerStyle(33);
+ 
+  CutVal_L->GetXaxis()->SetTitle("w0 value");
+  CutVal_L->GetYaxis()->SetTitle("SigEf/#sqrt{BackEf}");
+
+  TGraph *CutVal_H = new TGraph(19,w0,CutV);
+  CutVal_H->SetMarkerStyle(27);
+  CutVal_H->SetMarkerColor(kRed);
+  CutVal_H->GetXaxis()->SetTitle("w0 value");
+  CutVal_H->GetYaxis()->SetTitle("SigEf/#sqrt{BackEf}");
+
+
+  TMultiGraph *CutvalueS = new TMultiGraph(); 
+  CutvalueS->Add(CutVal_L,"p");
+  CutvalueS->Add(CutVal_H,"p");
+  
+  TMultiGraph *S_h = new TMultiGraph(); 
+  S_h->Add(Discr_L,"p");
+  S_h->Add(Discr_H,"p");
+ 
+  TH1 *h_dum0 = new TH1F("h_dum0","",100,0,1); 
+  TH1 *h_dum1 = new TH1F("h_dum1","",100,0,1); 
+  h_dum0->Fill(0.5);
+  h_dum1->Fill(0.5);
+
+  
+  TCanvas *cte = new TCanvas("cte","",500,500); 
+  cte->cd();
+  h_dum0->Draw(); 
+  h_dum0->SetLineColor(kRed);
+  h_dum1->Draw("same"); 
+  h_dum1->SetLineColor(kBlack);
+  
+
+  l1 = new TLegend(0.4961983,0.6604796,0.6976886,0.8603222);
+  l1->AddEntry("h_dum0"," High pt > 40 ","lp");
+  l1->AddEntry("h_dum1"," Low  pt < 30","lp");
+    
+  
+  l1->SetFillColor(0);
+  l1->SetBorderSize(0);
+
+
+
+  
+  TCanvas *cL = new TCanvas("cL","",500,500);
+  cL->cd();   
+  S_h->Draw("APL"); 
+
+
+    
+  S_h->GetXaxis()->SetTitle("w0 value");
+  S_h->GetYaxis()->SetTitle("SigEf/#sqrt{BackEf}");
+
+  
+  // l1->Draw(); 
+  cL->SaveAs("End_lowPu.png");
+
+
+ 
+  cL->Update();
+
+
+
+  
+  
+  TCanvas *Ccvals = new TCanvas("Cvals","",500,500); 
+  Ccvals->cd();
+  CutvalueS->Draw("APL"); 
+  CutvalueS->GetXaxis()->SetTitle("w0 value");
+  CutvalueS->GetYaxis()->SetTitle("CutValue");
+  
+  //  l1->Draw();
+
+  Ccvals->Update();
+  
+  Ccvals->SaveAs("CutVals.png");
+
+
+  /*
+  TGraph *ROC1 = new TGraph(1000,bck1,ef1);
+   ROC1->SetMarkerStyle(21);
+  ROC1->SetMarkerSize(0.5);
+
+  ROC1->SetMarkerColor(kRed);
+
+
+  TGraph *ROC2 = new TGraph(1000,bck2,ef2);
+   ROC2->SetMarkerStyle(21);
+  ROC2->SetMarkerSize(0.5);
+    
+  ROC2->SetMarkerColor(kRed-7);
+  
+
+  TGraph *ROC3 = new TGraph(1000,bck3,ef3);
+   ROC3->SetMarkerStyle(21);
+  ROC3->SetMarkerSize(0.5);
+
+  ROC3->SetMarkerColor(kRed-5 );
+
+
+
+
+  TGraph *ROC4 = new TGraph(1000,bck4,ef4);
+   ROC4->SetMarkerStyle(21);
+  ROC4->SetMarkerSize(0.5);
+
+  ROC4->SetMarkerColor(kOrange);
+
+
+
+  TGraph *ROC5 = new TGraph(1000,bck5,ef5);
+   ROC5->SetMarkerStyle(21);
+  ROC5->SetMarkerSize(0.5);
+  
+  ROC5->SetMarkerColor(kOrange-4);
+
+    
+
+  TGraph *ROC6 = new TGraph(1000,bck6,ef6);
+   ROC6->SetMarkerStyle(20);
+  ROC6->SetMarkerSize(0.5);
+  
+  ROC6->SetMarkerColor(kBlack);
+
+
+
+
+  TGraph *ROC7 = new TGraph(1000,bck7,ef7);
+     ROC7->SetMarkerStyle(20);
+  ROC7->SetMarkerSize(0.5);
+
+  ROC7->SetMarkerColor(kBlue);
+
+
+
+  TGraph *ROC8 = new TGraph(1000,bck8,ef8);
+    ROC8->SetMarkerStyle(20);
+  ROC8->SetMarkerSize(0.5);
+
+  ROC8->SetMarkerColor(kBlue-7);
+
+
+
+
+  TGraph *ROC9 = new TGraph(1000,bck9,ef9);
+    ROC9->SetMarkerStyle(20);
+  ROC9->SetMarkerSize(0.5);
+
+  ROC9->SetMarkerColor(kMagenta-10);
+
+
+
+
+  TGraph *ROC10 = new TGraph(1000,bck10,ef10);
+    ROC10->SetMarkerStyle(20);
+  ROC10->SetMarkerSize(0.5);
+
+  ROC10->SetMarkerColor(kMagenta);
+
+    
+
+
+  TGraph *ROC11 = new TGraph(1000,bck11,ef11);
+     ROC11->SetMarkerStyle(20);
+  ROC11->SetMarkerSize(0.5);
+
+  ROC11->SetMarkerColor(kMagenta-7);
+
+  
+
+
+  TGraph *ROC12 = new TGraph(1000,bck12,ef12);
+    ROC12->SetMarkerStyle(20);
+    ROC12->SetMarkerSize(0.5);
+    
+  ROC12->SetMarkerColor(kMagenta-10);
+
+
+
+
+  TGraph *ROC13 = new TGraph(1000,bck13,ef13);
+     ROC13->SetMarkerStyle(20);
+  ROC13->SetMarkerSize(0.5);
+    
+  ROC13->SetMarkerColor(kCyan);
+
+
+
+  TGraph *ROC14 = new TGraph(1000,bck14,ef14);
+     ROC14->SetMarkerStyle(20);
+  ROC14->SetMarkerSize(0.5);
+
+  ROC14->SetMarkerColor(kCyan-7);
+
+
+
+
+  TGraph *ROC15 = new TGraph(1000,bck15,ef15);
+     ROC15->SetMarkerStyle(20);
+  ROC15->SetMarkerSize(0.5);
+
+  ROC15->SetMarkerColor(kCyan-10);
+
+
+
+
+  TGraph *ROC16 = new TGraph(1000,bck16,ef16);
+     ROC16->SetMarkerStyle(20);
+  ROC16->SetMarkerSize(0.5);
+  ROC16->SetMarkerColor(kCyan-8);
+
+    
+   
+
+
+
+
+  
+  TGraph *lROC1 = new TGraph(1000,lbck1,lef1);
+     lROC1->SetMarkerStyle(33);
+   lROC1->SetMarkerSize(0.5);
+  lROC1->SetMarkerColor(kRed);
+
+
+  TGraph *lROC2 = new TGraph(1000,lbck2,lef2);
+    lROC2->SetMarkerStyle(33);
+  lROC2->SetMarkerSize(0.5);
+   lROC2->SetMarkerColor(kRed-7);
+
+
+  TGraph *lROC3 = new TGraph(1000,lbck3,lef3);
+     lROC3->SetMarkerStyle(33);
+  lROC3->SetMarkerSize(0.5);
+  lROC3->SetMarkerColor(kRed-5 );
+
+
+
+
+  TGraph *lROC4 = new TGraph(1000,lbck4,lef4);
+     lROC4->SetMarkerStyle(33);
+  lROC4->SetMarkerSize(0.5);
+  lROC4->SetMarkerColor(kOrange);
+
+
+
+  TGraph *lROC5 = new TGraph(1000,lbck5,lef5);
+     lROC5->SetMarkerStyle(33);
+  lROC5->SetMarkerSize(0.5);
+  lROC5->SetMarkerColor(kOrange-4);
+
+    
+
+  TGraph *lROC6 = new TGraph(1000,lbck6,lef6);
+     lROC6->SetMarkerStyle(29);
+  lROC6->SetMarkerSize(0.5);
+  lROC6->SetMarkerColor(kBlack);
+
+
+
+
+  TGraph *lROC7 = new TGraph(1000,lbck7,lef7);
+     lROC7->SetMarkerStyle(29);
+  lROC7->SetMarkerSize(0.5);
+  lROC7->SetMarkerColor(kBlue);
+
+
+
+  TGraph *lROC8 = new TGraph(1000,lbck8,lef8);
+     lROC8->SetMarkerStyle(29);
+  lROC8->SetMarkerSize(0.5);
+  lROC8->SetMarkerColor(kBlue-7);
+
+
+
+
+  TGraph *lROC9 = new TGraph(1000,lbck9,lef9);
+  lROC9->SetMarkerStyle(29);
+  lROC9->SetMarkerSize(0.5);
+  lROC9->SetMarkerColor(kMagenta-10);
+
+
+
+
+  TGraph *lROC10 = new TGraph(1000,lbck10,lef10);
+     lROC10->SetMarkerStyle(29);
+   lROC10->SetMarkerSize(0.5);
+  lROC10->SetMarkerColor(kMagenta);
+
+    
+
+
+  TGraph *lROC11 = new TGraph(1000,lbck11,lef11);
+     lROC11->SetMarkerStyle(29);
+  lROC11->SetMarkerSize(0.5);
+  lROC11->SetMarkerColor(kMagenta-7);
+
+  
+
+
+  TGraph *lROC12 = new TGraph(1000,lbck12,lef12);
+     lROC12->SetMarkerStyle(29);
+   lROC12->SetMarkerSize(0.5);
+  lROC12->SetMarkerColor(kMagenta-10);
+
+
+
+
+  TGraph *lROC13 = new TGraph(1000,lbck13,lef13);
+     lROC13->SetMarkerStyle(29);
+   lROC13->SetMarkerSize(0.5);
+  lROC13->SetMarkerColor(kCyan);
+
+
+
+  TGraph *lROC14 = new TGraph(1000,lbck14,lef14);
+     lROC14->SetMarkerStyle(29);
+   lROC14->SetMarkerSize(0.5);
+  lROC14->SetMarkerColor(kCyan-7);
+
+
+
+
+  TGraph *lROC15 = new TGraph(1000,lbck15,lef15);
+  lROC15->SetMarkerStyle(29); lROC15->SetMarkerSize(0.5);
+  lROC15->SetMarkerColor(kCyan-10);
+
+
+
+
+  TGraph *lROC16 = new TGraph(1000,lbck16,lef16);
+  lROC16->SetMarkerStyle(29);
+  lROC16->SetMarkerSize(0.5);
+
+  lROC16->SetMarkerColor(kCyan-8);
+
+
+
+
+  TMultiGraph *Rocks_l = new TMultiGraph(); 
+  Rocks_l->Add(lROC1,"p");
+  Rocks_l->Add(lROC2,"p");
+  Rocks_l->Add(lROC3,"p");
+  // Rocks_l->Add(lROC4,"p");
+  //  Rocks_l->Add(lROC5,"p");
+  Rocks_l->Add(lROC6,"p");
+  //  Rocks_l->Add(lROC7,"p");
+  // Rocks_l->Add(lROC8,"p");
+  //  Rocks_l->Add(lROC9,"p");
+  //  Rocks_l->Add(lROC10,"p");
+  // Rocks_l->Add(lROC11,"p");
+  // Rocks_l->Add(lROC12,"p");
+  //  Rocks_l->Add(lROC13,"p");
+  Rocks_l->Add(lROC14,"p");
+  Rocks_l->Add(lROC15,"p");
+
+  //Rocks_l->Add(lROC16,"p");
+
+  
+  TMultiGraph *Rocks = new TMultiGraph(); 
+  Rocks->Add(ROC1,"p");
+  //  Rocks->Add(ROC2,"p");
+  Rocks->Add(ROC3,"p");
+  //  Rocks->Add(ROC4,"p");
+  //  Rocks->Add(ROC5,"p");
+   Rocks->Add(ROC6,"p");
+  //  Rocks->Add(ROC7,"p");
+  // Rocks->Add(ROC8,"p");
+   Rocks->Add(ROC9,"p");
+  // Rocks->Add(ROC10,"p");
+  //  Rocks->Add(ROC11,"p");
+  // Rocks->Add(ROC12,"p");
+  // Rocks->Add(ROC13,"p");
+  Rocks->Add(ROC14,"p");
+  Rocks->Add(ROC15,"p");
+  //Rocks->Add(ROC16,"p");
+
+
+  TMultiGraph *RocH_L1 = new TMultiGraph(); 
+  
+  RocH_L1->Add(ROC1,"p");
+  RocH_L1->Add(lROC1,"p");
+
+  TMultiGraph *RocH_L2 = new TMultiGraph(); 
+  
+  RocH_L2->Add(ROC2,"p");
+  RocH_L2->Add(lROC2,"p");
+
+  TMultiGraph *RocH_L3 = new TMultiGraph(); 
+  
+  RocH_L3->Add(ROC3,"p");
+  RocH_L3->Add(lROC3,"p");
+
+  TMultiGraph *RocH_L4 = new TMultiGraph(); 
+  
+  RocH_L4->Add(ROC4,"p");
+  RocH_L4->Add(lROC4,"p");
+
+  TMultiGraph *RocH_L5 = new TMultiGraph(); 
+  
+  RocH_L5->Add(ROC5,"p");
+  RocH_L5->Add(lROC5,"p");
+
+  TMultiGraph *RocH_L6 = new TMultiGraph(); 
+  
+  RocH_L6->Add(ROC6,"p");
+  RocH_L6->Add(lROC6,"p");
+
+  
+  TMultiGraph *RocH_L7 = new TMultiGraph(); 
+  
+  RocH_L7->Add(ROC7,"p");
+  RocH_L7->Add(lROC7,"p");
+
+
+
+  TMultiGraph *RocH_L8 = new TMultiGraph(); 
+  
+  RocH_L8->Add(ROC8,"p");
+  RocH_L8->Add(lROC8,"p");
+
+  TMultiGraph *RocH_L9 = new TMultiGraph(); 
+  
+  RocH_L9->Add(ROC9,"p");
+  RocH_L9->Add(lROC9,"p");
+
+  TMultiGraph *RocH_L10= new TMultiGraph(); 
+  
+  RocH_L10->Add(ROC10,"p");
+  RocH_L10->Add(lROC10,"p");
+
+  TMultiGraph *RocH_L11 = new TMultiGraph(); 
+  
+  RocH_L11->Add(ROC11,"p");
+  RocH_L11->Add(lROC11,"p");
+
+  TMultiGraph *RocH_L12 = new TMultiGraph(); 
+  
+  RocH_L12->Add(ROC12,"p");
+  RocH_L12->Add(lROC12,"p");
+
+  
+  TMultiGraph *RocH_L13 = new TMultiGraph(); 
+  
+  RocH_L13->Add(ROC13,"p");
+  RocH_L13->Add(lROC13,"p");
+
+  TMultiGraph *RocH_L14 = new TMultiGraph(); 
+  
+  RocH_L14->Add(ROC14,"p");
+  RocH_L14->Add(lROC14,"p");
+
+  TMultiGraph *RocH_L15 = new TMultiGraph(); 
+  
+  RocH_L15->Add(ROC15,"p");
+  RocH_L15->Add(lROC15,"p");
+
+  TMultiGraph *RocH_L16 = new TMultiGraph(); 
+  
+  RocH_L16->Add(ROC16,"p");
+  RocH_L16->Add(lROC16,"p");
+
+
+
+  TCanvas *c4 = new TCanvas("c4"," roc low high comp",900,900);
+  c4->Divide(2,2);
+  c4->cd(1); 
+  
+  RocH_L1->Draw("APL");
+
+  c4->cd(2); 
+  
+  RocH_L2->Draw("APL");
+
+  c4->cd(3);  
+  RocH_L3->Draw("APL");
+
+  c4->cd(4);  
+  RocH_L4->Draw("APL");
+
+  c4->SaveAs("40_44_rocs.png");
+
+  
+  TCanvas *c5 = new TCanvas("c5"," roc low high comp",900,900);
+  c5->Divide(2,2);
+  c5->cd(1); 
+  
+  RocH_L5->Draw("APL");
+
+  c5->cd(2); 
+  
+  RocH_L6->Draw("APL");
+
+  c5->cd(3);  
+  RocH_L7->Draw("APL");
+
+  c5->cd(4);  
+  RocH_L8->Draw("APL");
+
+  
+  c5->SaveAs("45_48_rocs.png");
+
+ 
+  TCanvas *c6 = new TCanvas("c6"," roc low high comp",900,900);
+  c6->Divide(2,2);
+  c6->cd(1); 
+  
+  RocH_L9->Draw("APL");
+
+  c6->cd(2);  
+  RocH_L10->Draw("APL");
+
+  c6->cd(3);  
+  RocH_L11->Draw("APL");
+
+  c6->cd(4);  
+  RocH_L12->Draw("APL");
+
+  
+  c6->SaveAs("49_52_rocs.png");
+
+
+
+  TCanvas *c7 = new TCanvas("c7"," roc low high comp",900,900);
+  c7->Divide(2,2);
+  c7->cd(1); 
+  
+  RocH_L13->Draw("APL");
+
+  c7->cd(2);  
+  RocH_L14->Draw("APL");
+
+  c7->cd(3);  
+  RocH_L15->Draw("APL");
+
+  c7->cd(4);  
+  RocH_L16->Draw("APL");
+
+
+  c7->SaveAs("53_56_rocs.png");
+
+
+
+  TCanvas *C1 = new TCanvas("C1","comparison",900,900); 
+
+  C1->Divide(3,3);
+  C1->cd(1); 
+  
+  w40->Draw(); 
+  w40->SetLineColor(kRed); 
+  lw40->Draw("same"); 
+
+
+  C1->cd(2); 
+  
+  w41->Draw(); 
+  w41->SetLineColor(kRed); 
+  lw41->Draw("same"); 
+
+  
+  C1->cd(3); 
+  
+  w42->Draw(); 
+  w42->SetLineColor(kRed); 
+  lw42->Draw("same"); 
+
+
+
+  
+  C1->cd(4); 
+  
+  w43->Draw(); 
+  w43->SetLineColor(kRed); 
+  lw43->Draw("same"); 
+
+
+  
+  C1->cd(5); 
+  
+  w44->Draw(); 
+  w44->SetLineColor(kRed); 
+  lw44->Draw("same"); 
+
+  
+  C1->cd(6); 
+  
+  w45->Draw(); 
+  w45->SetLineColor(kRed); 
+  lw45->Draw("same"); 
+
+
+  
+  C1->cd(7); 
+  
+  w46->Draw(); 
+  w46->SetLineColor(kRed); 
+  lw46->Draw("same"); 
+
+  
+  C1->cd(8); 
+  
+  w47->Draw(); 
+  w47->SetLineColor(kRed); 
+  lw47->Draw("same"); 
+
+  
+  C1->cd(9); 
+  
+  w48->Draw(); 
+  w48->SetLineColor(kRed); 
+  lw48->Draw("same"); 
+
+
+  C1->SaveAs("Comp_l_high.png");
+
+
+
+
+
+
+  
+  
+
+
+  TCanvas *c1  = new TCanvas("c1"," rocs low pt ",700,700);
+  c1->cd();
+  Rocks_l->Draw("APL");
+  
+
+  //  c1->BuildLegend();
+
+
+  TCanvas *c2  = new TCanvas("c2"," rocs high pt  ",700,700);
+  c2->cd();
+  Rocks->Draw("APL");
+
+
+  l1 = new TLegend(0.4961983,0.6604796,0.6976886,0.8603222);
+  l1->AddEntry("H_dum0","w0 = 0.40","lp");
+  l1->AddEntry("H_dum1","w0 = 0.41","lp");
+  l1->AddEntry("H_dum2","w0 = 0.42","lp");
+  l1->AddEntry("H_dum3","w0 = 0.43","lp");
+  l1->AddEntry("H_dum4","w0 = 0.44","lp");
+  l1->AddEntry("H_dum5","w0 = 0.45","lp");
+  l1->AddEntry("H_dum6","w0 = 0.46","lp");
+  l1->AddEntry("H_dum7","w0 = 0.47","lp");
+  l1->AddEntry("H_dum8","w0 = 0.48","lp");
+  l1->AddEntry("H_dum9","w0 = 0.49","lp");
+  l1->AddEntry("H_dum10","w0 = 0.50","lp");
+  l1->AddEntry("H_dum11","w0 = 0.51","lp");
+  l1->AddEntry("H_dum12","w0 = 0.52","lp");
+  l1->AddEntry("H_dum13","w0 = 0.53","lp");
+  l1->AddEntry("H_dum14","w0 = 0.54","lp");
+  l1->AddEntry("H_dum15","w0 = 0.55","lp");
+  l1->AddEntry("H_dum16","w0 = 0.56","lp");
+
+  
+  
+  l1->SetFillColor(0);
+  l1->SetBorderSize(0);
+  //l1->SetTextSize(0.06);
+
+ 
+
+ 
+  l1->Draw();  
+
+
+
+  //  c2->BuildLegend();
+
+  //  return c2; 
+
+
+  */
+
+
+
+
+}

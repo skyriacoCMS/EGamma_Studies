@@ -1,0 +1,12 @@
+tmp/slc6_amd64_gcc481/src/RecoHI/HiEgammaAlgos/test/RecoHIHiEgammaAlgos_testAnalyzers/patTest/PATHIPhotonTestModule.o: \
+ src/RecoHI/HiEgammaAlgos/test/patTest/PATHIPhotonTestModule.cc \
+ src/DataFormats/PatCandidates/interface/Photon.h \
+ src/DataFormats/PatCandidates/interface/PATObject.h \
+ src/DataFormats/PatCandidates/interface/TriggerObjectStandAlone.h \
+ src/DataFormats/PatCandidates/interface/TriggerObject.h \
+ src/DataFormats/PatCandidates/interface/LookupTableRecord.h \
+ src/DataFormats/PatCandidates/interface/UserData.h \
+ src/DataFormats/PatCandidates/interface/CandKinResolution.h \
+ src/DataFormats/PatCandidates/interface/Isolation.h \
+ src/DataFormats/PatCandidates/interface/PackedCandidate.h \
+

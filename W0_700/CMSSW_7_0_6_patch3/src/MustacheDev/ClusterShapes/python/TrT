@@ -1,0 +1,25 @@
+
+#!/bin/bash
+
+export SCRAM_ARCH="slc6_amd64_gcc462"
+export VO_CMS_SW_DIR="/cms/base/cmssoft"
+export COIN_FULL_INDIRECT_RENDERING=1
+source /cms/base/cmssoft/cmsset_default.sh 
+
+#------------------------------------------
+
+Main_Dir=/cms/kyriacou/PhoVars/Sieie/CMSSW_7_0_6_patch3/src/MustacheDev/ClusterShapes/python
+export MYSCRIPT=/cms/kyriacou/PhoVars/Sieie/CMSSW_7_0_6_patch3/src/MustacheDev/ClusterShapes/python/TrT.py
+
+cd $Main_Dir
+
+eval `scram runtime -sh`
+echo "SCRAM_ARCH " $SCRAM_ARCH
+pwd
+
+
+python TrT.py
+
+
+
+

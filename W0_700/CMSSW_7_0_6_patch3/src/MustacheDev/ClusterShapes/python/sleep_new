@@ -1,0 +1,33 @@
+#!/bin/bash
+
+
+echo ""
+echo "CMSSW on Condor"
+echo ""
+
+START_TIME=`/bin/date`
+echo "started at $START_TIME"
+
+
+
+source /uscmst1/prod/sw/cms/shrc uaf
+export SCRAM_ARCH=slc6_amd64_gcc481
+
+cd /uscms_data/d3/skyria/SieieRetuning/CMSSW_7_0_6_patch3/src/MustacheDev/ClusterShapes/python
+
+
+
+eval `scramv1 runtime -sh`
+
+
+cd ${_CONDOR_SCRATCH_DIR}
+
+cmsRun /uscms_data/d3/skyria/SieieRetuning/CMSSW_7_0_6_patch3/src/MustacheDev/ClusterShapes/python/ConfFile_cfg.py $1 $2 
+
+
+
+
+
+#root -b -q /uscms_data/d3/skyria/batch_tutorial/CMSSW_7_0_0/src/TreeMaker.C 
+
+

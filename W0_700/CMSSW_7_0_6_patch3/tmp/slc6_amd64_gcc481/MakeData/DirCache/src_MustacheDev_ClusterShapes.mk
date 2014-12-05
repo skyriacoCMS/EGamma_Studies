@@ -1,0 +1,2 @@
+ALL_PACKAGES += $(patsubst src/%,%,src/MustacheDev/ClusterShapes)
+subdirs_src_MustacheDev_ClusterShapes := src_MustacheDev_ClusterShapes_plugins src_MustacheDev_ClusterShapes_python src_MustacheDev_ClusterShapes_test src_MustacheDev_ClusterShapes_doc

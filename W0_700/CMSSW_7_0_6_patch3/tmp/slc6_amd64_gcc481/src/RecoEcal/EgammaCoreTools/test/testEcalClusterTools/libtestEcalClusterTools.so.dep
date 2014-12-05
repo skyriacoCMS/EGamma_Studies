@@ -1,0 +1,4 @@
+tmp/slc6_amd64_gcc481/src/RecoEcal/EgammaCoreTools/test/testEcalClusterTools/testEcalClusterTools.o: \
+ src/RecoEcal/EgammaCoreTools/test/testEcalClusterTools.cc \
+ src/RecoEcal/EgammaCoreTools/interface/EcalClusterTools.h \
+

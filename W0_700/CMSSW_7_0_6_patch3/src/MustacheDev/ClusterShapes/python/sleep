@@ -1,0 +1,10 @@
+#!/bin/csh
+
+cmsRun ConfFile_cfg.py
+
+
+
+date
+
+
+

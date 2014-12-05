@@ -1,0 +1,50 @@
+tmp/slc6_amd64_gcc481/src/PhysicsTools/PatExamples/src/PhysicsToolsPatExamples/AnalysisTasksAnalyzerBTag.o: \
+ src/PhysicsTools/PatExamples/src/AnalysisTasksAnalyzerBTag.cc \
+ src/DataFormats/PatCandidates/interface/Jet.h \
+ src/DataFormats/PatCandidates/interface/PATObject.h \
+ src/DataFormats/PatCandidates/interface/TriggerObjectStandAlone.h \
+ src/DataFormats/PatCandidates/interface/TriggerObject.h \
+ src/DataFormats/PatCandidates/interface/LookupTableRecord.h \
+ src/DataFormats/PatCandidates/interface/UserData.h \
+ src/DataFormats/PatCandidates/interface/CandKinResolution.h \
+ src/DataFormats/PatCandidates/interface/JetCorrFactors.h \
+ src/PhysicsTools/PatExamples/interface/AnalysisTasksAnalyzerBTag.h \
+
+tmp/slc6_amd64_gcc481/src/PhysicsTools/PatExamples/src/PhysicsToolsPatExamples/AnalysisTasksAnalyzerJEC.o: \
+ src/PhysicsTools/PatExamples/src/AnalysisTasksAnalyzerJEC.cc \
+ src/DataFormats/PatCandidates/interface/Jet.h \
+ src/DataFormats/PatCandidates/interface/PATObject.h \
+ src/DataFormats/PatCandidates/interface/TriggerObjectStandAlone.h \
+ src/DataFormats/PatCandidates/interface/TriggerObject.h \
+ src/DataFormats/PatCandidates/interface/LookupTableRecord.h \
+ src/DataFormats/PatCandidates/interface/UserData.h \
+ src/DataFormats/PatCandidates/interface/CandKinResolution.h \
+ src/DataFormats/PatCandidates/interface/JetCorrFactors.h \
+ src/PhysicsTools/PatExamples/interface/AnalysisTasksAnalyzerJEC.h \
+
+tmp/slc6_amd64_gcc481/src/PhysicsTools/PatExamples/src/PhysicsToolsPatExamples/PatBTagCommonHistos.o: \
+ src/PhysicsTools/PatExamples/src/PatBTagCommonHistos.cc \
+ src/DataFormats/PatCandidates/interface/Jet.h \
+ src/DataFormats/PatCandidates/interface/PATObject.h \
+ src/DataFormats/PatCandidates/interface/TriggerObjectStandAlone.h \
+ src/DataFormats/PatCandidates/interface/TriggerObject.h \
+ src/DataFormats/PatCandidates/interface/LookupTableRecord.h \
+ src/DataFormats/PatCandidates/interface/UserData.h \
+ src/DataFormats/PatCandidates/interface/CandKinResolution.h \
+ src/DataFormats/PatCandidates/interface/JetCorrFactors.h \
+ src/PhysicsTools/PatExamples/interface/PatBTagCommonHistos.h \
+ src/PhysicsTools/PatUtils/interface/bJetSelector.h \
+
+tmp/slc6_amd64_gcc481/src/PhysicsTools/PatExamples/src/PhysicsToolsPatExamples/PatMuonAnalyzer.o: \
+ src/PhysicsTools/PatExamples/src/PatMuonAnalyzer.cc \
+ src/DataFormats/PatCandidates/interface/Muon.h \
+ src/DataFormats/PatCandidates/interface/Lepton.h \
+ src/DataFormats/PatCandidates/interface/PATObject.h \
+ src/DataFormats/PatCandidates/interface/TriggerObjectStandAlone.h \
+ src/DataFormats/PatCandidates/interface/TriggerObject.h \
+ src/DataFormats/PatCandidates/interface/LookupTableRecord.h \
+ src/DataFormats/PatCandidates/interface/UserData.h \
+ src/DataFormats/PatCandidates/interface/CandKinResolution.h \
+ src/DataFormats/PatCandidates/interface/Isolation.h \
+ src/PhysicsTools/PatExamples/interface/PatMuonAnalyzer.h \
+
